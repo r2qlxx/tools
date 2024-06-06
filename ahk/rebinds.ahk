@@ -21,19 +21,11 @@ F13 & i::Send, {Blind}{up}
 F13 & k::Send, {Blind}{down}
 F13 & j::Send, {Blind}{left}
 F13 & l::Send, {Blind}{right}
-F13 & Space:: Send {Blind}{Home}
-F13 & `;:: Send {Blind}{End}
 
-F13 & c:: Send {Blind}^{Insert}
-F13 & v:: Send {Blind}+{Insert}
+F13 & c:: Send {Blind}{Capslock}
+F13 & h:: Send {Blind}{Home}
+F13 & e:: Send {Blind}{End}
+F13 & d:: Send {Blind}{Delete}
 
-F13 & u:: Send {Blind}+{Home}
-F13 & o:: Send {Blind}+{End}
-
-F13 & m:: Send {Blind}#^{Left}
-F13 & ,:: Send {Blind}#{Tab}
-F13 & .:: Send {Blind}#^{Right}
-
-F13 & Backspace:: Send {Blind}{Delete}
-
-F13 & z:: Send {Blind}{Capslock}
+F13 & u:: Send {Blind}#^{Left}
+F13 & o:: Send {Blind}#^{Right}
