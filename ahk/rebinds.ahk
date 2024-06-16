@@ -3,7 +3,7 @@
 SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
 SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 
-F13 & ~`:: Send {Blind}{Esc}
+F13 & `:: Send {Blind}{Esc}
 F13 & 1:: Send {Blind}{F1}
 F13 & 2:: Send {Blind}{F2}
 F13 & 3:: Send {Blind}{F3}
@@ -27,5 +27,5 @@ F13 & h:: Send {Blind}{Home}
 F13 & e:: Send {Blind}{End}
 F13 & d:: Send {Blind}{Delete}
 
-F13 & u:: Send {Blind}#^{Left}
-F13 & o:: Send {Blind}#^{Right}
+F13 & f:: Send {Blind}#^{Right}
+F13 & b:: Send {Blind}#^{Left}
