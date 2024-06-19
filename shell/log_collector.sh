@@ -7,9 +7,6 @@ readonly bkup_dir="bkup_lc"
 readonly output_dir="output_lc"
 readonly target_files=(
   # Write target log files here.
-  "/home/admin/a.log"
-  "/home/admin/b.log"
-  "/home/admin/c.log"
 )
 
 ### Functions
