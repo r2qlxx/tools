@@ -42,7 +42,7 @@ if [ -z "${message}" ]; then
   usage
 fi
 
-if [ ! -e ${GIT} ]; then
+if [ ! -e "${GIT}" ]; then
   eexit "There is no .git directory." 2
 fi
 
@@ -68,18 +68,17 @@ EOF
 
 echo -n "A. "
 read ans
-if [ ${ans} != "y" ]; then
+if [ "${ans}" != "y" ]; then
   eexit "Terminated." 1
 fi
 
 git add . > /dev/null
-git_status=$(git status -s)
 git_commit=$(git commit -m "${message}")
 
 cat << EOF
 
 [Adding]
-${git_status}
+${target_files}
 
 [Committing]
 ${git_commit}
