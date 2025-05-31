@@ -1,9 +1,10 @@
-; Note: Rebind Capslock to F13 with reg script.
+; Note: Rebind Capslock to F13, RCtrl to F14 with reg script.
 
 #Requires AutoHotkey v2.0
 SendMode("Input")  ; Recommended for new scripts due to its superior speed and reliability.
 
 F13::Send("{F13}")
+F14::Send("{F14}")
 
 ; Function keys
 F13 & 1::Send("{Blind}{F1}")
@@ -30,3 +31,15 @@ F13 & o::Send("{Blind}{End}")
 ; Switching desktops
 F13 & q::Send("{Blind}#^{Left}")
 F13 & w::Send("{Blind}#^{Right}")
+
+; Switching tabs
+F13 & t::Send("{Blind}^{Tab}")
+F13 & r::Send("{Blind}^+{Tab}")
+
+; Win key shortcuts
+F13 & e::Send("{Blind}#{e}")
+F13 & s::Send("{Blind}#+{s}")
+
+; Next/Back chapters on youtube.com
+F14 & Left::Send("^{Left}")
+F14 & Right::Send("^{Right}")
