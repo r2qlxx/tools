@@ -51,7 +51,7 @@ F13 & w::Send("{Blind}#^{Right}")
 F13 & t::Send("{Blind}^{Tab}")
 F13 & r::Send("{Blind}^+{Tab}")
 
-; Switching IME for japanese
+; Switching IME for Japanese
 F13 & Space::Send("{Blind}{vkF3sc029}")
 
 ; Next/Back chapters on youtube.com
