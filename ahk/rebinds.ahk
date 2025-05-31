@@ -38,6 +38,7 @@ F13 & r::Send("{Blind}^+{Tab}")
 
 ; Win key shortcuts
 F13 & e::Send("{Blind}#{e}")
+F13 & v::Send("{Blind}#{v}")
 F13 & s::Send("{Blind}#+{s}")
 
 ; Next/Back chapters on youtube.com
