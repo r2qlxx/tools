@@ -1,4 +1,7 @@
 Windows Registry Editor Version 5.00
 
+// Script to rebind CapsLock as F13 and RCtrl as F14.
+// Confirmed to work with Windows 11.
+
 [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Keyboard Layout]
 "Scancode Map"=hex:00,00,00,00,00,00,00,00,03,00,00,00,64,00,3a,00,65,00,1d,e0,00,00,00,00
