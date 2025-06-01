@@ -10,6 +10,9 @@ F14::Send("{F14}")
 ; Rebind just in case
 F13 & c::Send("{Blind}{Capslock}")
 
+; Exit application
+F13 & `::Send("{Blind}!{F4}")
+
 ; Function keys
 F13 & 1::Send("{Blind}{F1}")
 F13 & 2::Send("{Blind}{F2}")
@@ -30,29 +33,37 @@ F13 & k::Send("{Blind}{Down}")
 F13 & i::Send("{Blind}{Up}")
 F13 & l::Send("{Blind}{Right}")
 
-; Home and End
+; Home / End
 F13 & u::Send("{Blind}{Home}")
 F13 & o::Send("{Blind}{End}")
-F13 & m::Send("{Blind}+{Home}")
-F13 & .::Send("{Blind}+{End}")
+F13 & y::Send("{Blind}+{Home}")
+F13 & p::Send("{Blind}+{End}")
 
 ; Win key shortcuts
 F13 & d::Send("{Blind}#{d}")
 F13 & e::Send("{Blind}#{e}")
 F13 & v::Send("{Blind}#{v}")
-F13 & Tab::Send("{Blind}#{Tab}")
 F13 & s::Send("{Blind}#+{s}")
+F13 & m::Send("{Blind}#{Left}")
+F13 & ,::Send("{Blind}#{Down}")
+F13 & .::Send("{Blind}#{Up}")
+F13 & ?::Send("{Blind}#{Right}")
 
-; Switching desktops
+; Switch desktops
+F13 & Tab::Send("{Blind}#{Tab}")
 F13 & q::Send("{Blind}#^{Left}")
 F13 & w::Send("{Blind}#^{Right}")
 
-; Switching tabs
+; Switch tabs
 F13 & t::Send("{Blind}^{Tab}")
 F13 & r::Send("{Blind}^+{Tab}")
 
-; Switching IME for Japanese
+; Switch IME
 F13 & Space::Send("{Blind}{vkF3sc029}")
+
+; Zoom / Out
+F13 & {::Send("{Blind}^{WheelUp}")
+F13 & }::Send("{Blind}^{WheelDown}")
 
 ; Next/Back chapters on youtube.com
 F14 & Left::Send("^{Left}")
