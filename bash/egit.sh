@@ -9,11 +9,9 @@ function usage() {
 Usage: $(basename $0) [Options]
 
 Description:
-  Script to automate "Adding, Committing, Pushing".
+  Script to automate "Adding -> Committing -> Pushing".
 
 Options:
-  -m <Commit Message>    Set commit message.
-                         Empty message is unacceptable.
   -h                     Help
 EOF
 
@@ -21,26 +19,19 @@ exit 2
 }
 
 function eexit() {
-  echo $1
+  echo -e $1
   exit $2
 }
 
 ### Main
-while getopts :m:h OPT
+while getopts :h OPT
 do
   case ${OPT} in
-    m)
-      message=${OPTARG}
-      ;;
     h | *)
       usage
       ;;
   esac
 done
-
-if [ -z "${message}" ]; then
-  usage
-fi
 
 if [ ! -e "${GIT}" ]; then
   eexit "There is no .git directory." 2
@@ -48,45 +39,54 @@ fi
 
 target_repo=$(basename -s .git $(git remote get-url origin))
 target_branch=$(git rev-parse --abbrev-ref HEAD)
-target_files=$(git status -s)
-if [ -z "${target_files}" ]; then
+untracked_files=$(git status -s)
+if [ -z "${untracked_files}" ]; then
   eexit "Nothing to add." 1
 fi
 
 cat << EOF
-[Target Repository]
+[Target repository]
 ${target_repo}
 
-[Target Branch]
+[Target branch]
 ${target_branch}
 
-[Untracked Files]
-${target_files}
+[Untracked files]
+${untracked_files}
+
+[Commit message]
+EOF
+
+read commit_message
+
+cat << EOF
 
 Q. DO YOU WANNA ADD, COMMIT and PUSH ? [y/n]
 EOF
 
-echo -n "A. "
 read ans
-if [ "${ans}" != "y" ]; then
-  eexit "Terminated." 1
+if [ "${ans}" != "y" ] && [ "${ans}" != "Y" ]; then
+  eexit "\nTerminated." 1
 fi
 
-git add . > /dev/null
-git_commit=$(git commit -m "${message}")
+staged_files=$(git add . > /dev/null; git status -s)
+commit_output=$(git commit -m "${commit_message}")
 
 cat << EOF
 
-[Adding]
-${target_files}
+[Staged files]
+${staged_files}
 
-[Committing]
-${git_commit}
-
-[Pushing]
+[Commit log]
+${commit_output}
 EOF
 
-# To improve the appearance of the output results, this process is not included in the above process.
-git_push=$(git push origin "${target_branch}")
+push_output=$(git push origin "${target_branch}" 2>&1)
 
-echo -e "\nCompleted."
+cat << EOF
+
+[Push log]
+${push_output}
+
+Completed.
+EOF
