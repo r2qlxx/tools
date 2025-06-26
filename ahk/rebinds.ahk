@@ -6,13 +6,6 @@ SendMode("Input")  ; Recommended for new scripts due to its superior speed and r
 F13::Send("{F13}")
 F14::Send("{F14}")
 
-; Capslock
-; Rebind just in case
-F13 & c::Send("{Blind}{Capslock}")
-
-; Exit application
-F13 & `::Send("{Blind}!{F4}")
-
 ; Function keys
 F13 & 1::Send("{Blind}{F1}")
 F13 & 2::Send("{Blind}{F2}")
@@ -27,27 +20,19 @@ F13 & 0::Send("{Blind}{F10}")
 F13 & -::Send("{Blind}{F11}")
 F13 & =::Send("{Blind}{F12}")
 
-; Movement keys
+; Arrow keys
 F13 & j::Send("{Blind}{Left}")
 F13 & k::Send("{Blind}{Down}")
 F13 & i::Send("{Blind}{Up}")
 F13 & l::Send("{Blind}{Right}")
 
-; Home / End
+; Navigation keys
+F13 & p::Send("{Blind}{Insert}")
+F13 & `;::Send("{Blind}{Delete}")
 F13 & u::Send("{Blind}{Home}")
 F13 & o::Send("{Blind}{End}")
-F13 & y::Send("{Blind}+{Home}")
-F13 & p::Send("{Blind}+{End}")
-
-; Win key shortcuts
-F13 & d::Send("{Blind}#{d}")
-F13 & e::Send("{Blind}#{e}")
-F13 & v::Send("{Blind}#{v}")
-F13 & s::Send("{Blind}#+{s}")
-F13 & m::Send("{Blind}#{Left}")
-F13 & ,::Send("{Blind}#{Down}")
-F13 & .::Send("{Blind}#{Up}")
-F13 & ?::Send("{Blind}#{Right}")
+F13 & {::Send("{Blind}{PgUp}")
+F13 & '::Send("{Blind}{PgDn}")
 
 ; Switch desktops
 F13 & Tab::Send("{Blind}#{Tab}")
@@ -60,10 +45,6 @@ F13 & r::Send("{Blind}^+{Tab}")
 
 ; Switch IME
 F13 & Space::Send("{Blind}{vkF3sc029}")
-
-; Zoom / Out
-F13 & {::Send("{Blind}^{WheelUp}")
-F13 & }::Send("{Blind}^{WheelDown}")
 
 ; Next/Back chapters on youtube.com
 F14 & Left::Send("^{Left}")
